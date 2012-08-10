@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                        http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>edu.uiowa.icts.hadoop</groupId>
+  <artifactId>medline</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>Hadoop Job</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.apache.hadoop</groupId>
+      <artifactId>hadoop-core</artifactId>
+      <version>0.20.2</version>
+    </dependency>
+    <!--
+         Add project dependencies here. The archetype plugin will
+         include all dependencies from the "compile" scope (which is
+	 the default) in the job jar's "lib" directory.
+    -->
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-core</artifactId>
+      <version>1.8.5</version>
+      <scope>test</scope>
+    </dependency>
+  <dependency>
+    <groupId>net.sf.jopt-simple</groupId>
+    <artifactId>jopt-simple</artifactId>
+    <version>4.3</version>
+  </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.7</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+    	<groupId>edu.stanford.nlp</groupId>
+    	<artifactId>stanford-corenlp</artifactId>
+    	<version>1.3.0</version>
+    </dependency>
+    <dependency>
+    	<groupId>org.jsoup</groupId>
+    	<artifactId>jsoup</artifactId>
+    	<version>1.2.3</version>
+    </dependency>
+<dependency>
+	<groupId>org.apache.cassandra</groupId>
+	<artifactId>cassandra-all</artifactId>
+	<version>1.0.9</version>
+</dependency>
+
+
+
+<dependency>
+<groupId>javax.xml.bind</groupId>
+<artifactId>jaxb-api</artifactId>
+<version>2.1</version>
+</dependency>
+ 
+<dependency>
+<groupId>com.sun.xml.bind</groupId>
+<artifactId>jaxb-impl</artifactId>
+<version>2.1.3</version>
+</dependency>
+
+
+  	<dependency>
+  		<groupId>edu.uiowa.icts.medline</groupId>
+  		<artifactId>medline-base</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.6</source>
+          <target>1.6</target>
+        </configuration>
+      </plugin>
+<!--       <plugin> -->
+<!--         <artifactId>maven-assembly-plugin</artifactId> -->
+<!--         <version>2.2.1</version> -->
+<!--         <configuration> -->
+<!--           <descriptors> -->
+<!--             <descriptor>src/main/assembly/hadoop-job.xml</descriptor> -->
+<!--           </descriptors> -->
+          
+<!--         </configuration> -->
+<!--         <executions> -->
+<!--           <execution> -->
+<!--             <id>make-assembly</id> -->
+<!--             <phase>package</phase> -->
+<!--             <goals> -->
+<!--               <goal>single</goal> -->
+<!--             </goals> -->
+<!--           </execution> -->
+<!--         </executions> -->
+<!--       </plugin> -->
+<plugin>
+	<artifactId>maven-assembly-plugin</artifactId>
+	<configuration>
+		<finalName>${project.artifactId}-${project.version}</finalName>
+		<appendAssemblyId>true</appendAssemblyId>
+		<descriptors>
+			<descriptor>src/main/assembly/job.xml</descriptor>
+		</descriptors>
+	</configuration>
+</plugin>
+
+
+
+
+          <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-jar-plugin</artifactId>
+          <configuration>
+        <archive>
+          <manifest>
+            <mainClass>edu.uiowa.icts.hadoop.MedlineMeshCount</mainClass>
+              <addClasspath>true</addClasspath>
+              <classpathPrefix>lib/</classpathPrefix>
+          </manifest>
+          </archive>
+          </configuration>
+      </plugin>
+          <plugin>
+      <artifactId>maven-dependency-plugin</artifactId>
+          <executions>
+              <execution>
+                  <phase>install</phase>
+                  <goals>
+                      <goal>copy-dependencies</goal>
+                  </goals>
+                  <configuration>
+                      <outputDirectory>${project.build.directory}/lib</outputDirectory>
+                  </configuration>
+              </execution>
+          </executions>
+          </plugin>
+          
+      
+    </plugins>
+  </build>
+
+</project>

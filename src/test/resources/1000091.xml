@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MedlineCitation Owner="NLM" Status="MEDLINE">
+  <PMID Version="1">1000091</PMID>
+  <DateCreated>
+    <Year>1977</Year>
+    <Month>02</Month>
+    <Day>24</Day>
+  </DateCreated>
+  <DateCompleted>
+    <Year>1977</Year>
+    <Month>02</Month>
+    <Day>24</Day>
+  </DateCompleted>
+  <DateRevised>
+    <Year>2009</Year>
+    <Month>11</Month>
+    <Day>11</Day>
+  </DateRevised>
+  <Article PubModel="Print">
+    <Journal>
+      <ISSN IssnType="Print">0007-4551</ISSN>
+      <JournalIssue CitedMedium="Print">
+        <Volume>63</Volume>
+        <Issue>3</Issue>
+        <PubDate>
+          <MedlineDate>1976 Jul-Sep</MedlineDate>
+        </PubDate>
+      </JournalIssue>
+      <Title>Bulletin du cancer</Title>
+      <ISOAbbreviation>Bull Cancer</ISOAbbreviation>
+    </Journal>
+    <ArticleTitle>Combined modality approach in small cell carcinoma of the bronchus. A pilot study.</ArticleTitle>
+    <Pagination>
+      <MedlinePgn>387-92</MedlinePgn>
+    </Pagination>
+    <Abstract>
+      <AbstractText>Our first experiences with polychemotherapy (COMB-regimen) followed by radiotherapy for patients with small cell carcinomas are encouraging. 7 patients out of 18 showed a complete remission. The treatment was well tolerated by all patients.</AbstractText>
+    </Abstract>
+    <AuthorList CompleteYN="Y">
+      <Author ValidYN="Y">
+        <LastName>Scherer</LastName>
+        <ForeName>E</ForeName>
+        <Initials>E</Initials>
+      </Author>
+      <Author ValidYN="Y">
+        <LastName>Mamoski</LastName>
+        <ForeName>H B</ForeName>
+        <Initials>HB</Initials>
+      </Author>
+      <Author ValidYN="Y">
+        <LastName>Schmidt</LastName>
+        <ForeName>C G</ForeName>
+        <Initials>CG</Initials>
+      </Author>
+      <Author ValidYN="Y">
+        <LastName>Osieka</LastName>
+        <ForeName>R</ForeName>
+        <Initials>R</Initials>
+      </Author>
+    </AuthorList>
+    <Language>eng</Language>
+    <PublicationTypeList>
+      <PublicationType>Journal Article</PublicationType>
+    </PublicationTypeList>
+  </Article>
+  <MedlineJournalInfo>
+    <Country>FRANCE</Country>
+    <MedlineTA>Bull Cancer</MedlineTA>
+    <NlmUniqueID>0072416</NlmUniqueID>
+    <ISSNLinking>0007-4551</ISSNLinking>
+  </MedlineJournalInfo>
+  <ChemicalList>
+    <Chemical>
+      <RegistryNumber>0</RegistryNumber>
+      <NameOfSubstance>Antineoplastic Agents</NameOfSubstance>
+    </Chemical>
+  </ChemicalList>
+  <CitationSubset>IM</CitationSubset>
+  <MeshHeadingList>
+    <MeshHeading>
+      <DescriptorName MajorTopicYN="N">Antineoplastic Agents</DescriptorName>
+      <QualifierName MajorTopicYN="N">adverse effects</QualifierName>
+    </MeshHeading>
+    <MeshHeading>
+      <DescriptorName MajorTopicYN="N">Bronchial Neoplasms</DescriptorName>
+      <QualifierName MajorTopicYN="N">drug therapy</QualifierName>
+      <QualifierName MajorTopicYN="N">radiotherapy</QualifierName>
+      <QualifierName MajorTopicYN="Y">therapy</QualifierName>
+    </MeshHeading>
+    <MeshHeading>
+      <DescriptorName MajorTopicYN="N">Carcinoma</DescriptorName>
+      <QualifierName MajorTopicYN="N">drug therapy</QualifierName>
+      <QualifierName MajorTopicYN="N">radiotherapy</QualifierName>
+      <QualifierName MajorTopicYN="Y">therapy</QualifierName>
+    </MeshHeading>
+    <MeshHeading>
+      <DescriptorName MajorTopicYN="N">Drug Therapy, Combination</DescriptorName>
+    </MeshHeading>
+    <MeshHeading>
+      <DescriptorName MajorTopicYN="N">Humans</DescriptorName>
+    </MeshHeading>
+    <MeshHeading>
+      <DescriptorName MajorTopicYN="N">Leukocyte Count</DescriptorName>
+    </MeshHeading>
+    <MeshHeading>
+      <DescriptorName MajorTopicYN="N">Pilot Projects</DescriptorName>
+    </MeshHeading>
+  </MeshHeadingList>
+</MedlineCitation>
