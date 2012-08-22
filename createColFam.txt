@@ -1,0 +1,52 @@
+create keyspace MEDLINE;
+
+use MEDLINE;
+create column family Article with comparator = UTF8Type;
+create column family Journal with comparator = UTF8Type;
+create column family PubsByJournal with comparator = UTF8Type;
+create column family AuthorsByPub with comparator = UTF8Type;
+create column family PubsByGrant with comparator = UTF8Type;
+create column family GrantsByPub with comparator = UTF8Type;
+create column family PubsByMESH with comparator = UTF8Type;
+create column family Author with comparator = UTF8Type;
+assume Author keys as ascii; 
+update column family Author with column_metadata=[
+ {column_name: first_name, validation_class: UTF8Type, index_type: KEYS}
+ {column_name: initial, validation_class: UTF8Type, index_type: KEYS}
+ {column_name: last_name, validation_class: UTF8Type, index_type: KEYS}
+];
+
+
+
+
+create column family MeshCombinations with comparator = UTF8Type;
+update column family MeshCombinations with column_metadata=[
+ {column_name: term_1, validation_class: UTF8Type, index_type: KEYS}
+ {column_name: term_2, validation_class: UTF8Type, index_type: KEYS}
+ {column_name: term_3, validation_class: UTF8Type, index_type: KEYS}
+ {column_name: term_4, validation_class: UTF8Type, index_type: KEYS}
+ {column_name: term_5, validation_class: UTF8Type, index_type: KEYS}
+];
+
+
+create column family PubsByAuthor with comparator = UTF8Type;
+create column family AlphaByAuthor with comparator = UTF8Type;
+create column family Mesh with comparator = UTF8Type;
+create column family AlphaByMESH with comparator = UTF8Type;
+create column family Keyword with comparator = UTF8Type;
+create column family AlphaByKeyword with comparator = UTF8Type;
+create column family PubsByKeyword with comparator = UTF8Type;
+
+create column family MedlineCitation with comparator = UTF8Type;
+assume MedlineCitation keys as ascii;
+
+update column family MedlineCitation with column_metadata=[ 
+ {column_name: publishYearMonth, validation_class: UTF8Type, index_type: KEYS}
+ {column_name: createdYearMonth, validation_class: UTF8Type, index_type: KEYS}
+ {column_name: revisedYearMonth, validation_class: UTF8Type, index_type: KEYS} 
+ {column_name: completedYearMonth, validation_class: UTF8Type, index_type: KEYS} 
+];
+
+
+create column family AllMedlineCitations with comparator = UTF8Type;
+create column family  output_words with comparator = UTF8Type;
