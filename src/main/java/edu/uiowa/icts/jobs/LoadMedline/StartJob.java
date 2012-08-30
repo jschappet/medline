@@ -170,7 +170,12 @@ public class StartJob extends Configured implements Tool {
         FileSystem.get(job.getConfiguration()).delete(new Path(outputPath), true);
 
     }
-    job.waitForCompletion(true);
+    try {
+		job.waitForCompletion(true);
+	} catch (Exception e) {
+		// TODO Auto-generated catch block
+		LOG.error("Createing Job", e);
+	}
 
     return 0;
   }

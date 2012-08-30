@@ -37,7 +37,7 @@ public class MapperToCassandra extends Mapper<LongWritable, Text, ByteBuffer, Li
 	  
 	  @Override
 	  public void map(LongWritable key, Text doc, Context context) { //throws IOException, InterruptedException {
-	  	context.getCounter(Count.DOCS).increment(1);
+		 context.getCounter(Count.DOCS).increment(1);
 	  	//raw_xml.set( doc );
 	  	String xml = doc.toString();
 	  	
@@ -61,7 +61,7 @@ public class MapperToCassandra extends Mapper<LongWritable, Text, ByteBuffer, Li
 			// TODO Auto-generated catch block
 			logger.error("Error Message", e);
 			//e.printStackTrace();
-		} catch (InterruptedException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			logger.error("Error Message", e);
 			//e.printStackTrace();

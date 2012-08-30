@@ -50,3 +50,9 @@ update column family MedlineCitation with column_metadata=[
 
 create column family AllMedlineCitations with comparator = UTF8Type;
 create column family  output_words with comparator = UTF8Type;
+
+
+update column family Mesh with column_metadata=[
+ {column_name: term, validation_class: UTF8Type, index_type: KEYS}
+];
+

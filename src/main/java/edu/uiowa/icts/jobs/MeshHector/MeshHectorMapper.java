@@ -95,10 +95,8 @@ public class MeshHectorMapper extends Mapper<ByteBuffer, SortedMap<ByteBuffer, I
 				// TODO Auto-generated catch block
 				LOG.error("Error getting value: " , e);
 			}
-			LOG.info("mapping");
 			citation = new Citation(value, unmarshaller);
 			List<String> meshList = citation.getMajorMeshHeading();
-			LOG.info("Term Count: " + meshList.size() + " pmid:" + citation.getPmid());
 			for (String mesh : meshList ) {
 				currentTerm = mesh;
 				//context.getCounter(Count.AUTHORS).increment(1);
@@ -136,29 +134,21 @@ public class MeshHectorMapper extends Mapper<ByteBuffer, SortedMap<ByteBuffer, I
 	  
 	  
 	  
-	  
-	  private String getMeshTermId(String meshTerm) {
-		  
-		  //meshTemplate
-		  return "";
-	  }
-	  
-	    private static Mutation getMutation(String colName, String value)
-	    {
+	  private static Mutation getMutation(String colName, String value)
+	  {
 	        
-			Column c = new Column();
+		Column c = new Column();
 	  
-			c.setName(ByteBufferUtil.bytes(colName));
+		c.setName(ByteBufferUtil.bytes(colName));
 			
-			c.setValue(ByteBufferUtil.bytes(value));
-			c.setTimestamp(System.currentTimeMillis());
+		c.setValue(ByteBufferUtil.bytes(value));
+		c.setTimestamp(System.currentTimeMillis());
 
-			Mutation m = new Mutation();
-			m.setColumn_or_supercolumn(new ColumnOrSuperColumn());
-			m.column_or_supercolumn.setColumn(c);
-			return m;
-			
-	    }
+		Mutation m = new Mutation();
+		m.setColumn_or_supercolumn(new ColumnOrSuperColumn());
+		m.column_or_supercolumn.setColumn(c);
+		return m;
+	  }
 
 	    
 	    
